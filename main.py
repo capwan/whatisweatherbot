@@ -20,6 +20,9 @@ def echo_all(message):
     bot.reply_to(message, weather_info)
 
 
-bot.polling()
+try :
+    bot.polling()
+except:
+    print("Такого города не существует.")
 
 

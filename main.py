@@ -4,7 +4,7 @@ from pyowm.utils.config import get_default_config
 
 config_dict = get_default_config()
 config_dict['language'] = 'ru'
-owm = pyowm.OWM('c19ac12a384b37dd79f6408bf1560726')
+owm = pyowm.OWM('c19ac12a384b37dd79f6408bf1560726', config_dict)
 bot = telebot.TeleBot("1763102450:AAG8R7etHjR14_7Gb_BfHIrs1l3ek2gnSbM", parse_mode=None)
 
 @bot.message_handler(func=lambda m: True)

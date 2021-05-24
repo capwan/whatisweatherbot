@@ -31,4 +31,4 @@ try :
 
     bot.polling(none_stop=True)
 except:
-  print("Your input is wrong.")
+  print("This city was not found .")

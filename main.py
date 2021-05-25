@@ -13,20 +13,23 @@ def start(message):
     send_mess = f"<b>Привет 🤚🏻 {message.from_user.first_name}! </b>\nКакой город тебя интересует?🌍"
     bot.send_message(message.chat.id, send_mess, parse_mode='html')
 
-
 @bot.message_handler(func=lambda m: True)
 def echo_all(message):
-    mgr = owm.weather_manager()
-    observation = mgr.weather_at_place(message.text)
-    w = observation.weather
-    #print(w.wind()['speed'], w.temperature('celsius')['temp'])
-    weather_info = "🏫 В городе "+message.text+" сейчас "+w.detailed_status+"\n"
-    weather_info += "☀️ Температура: " + str(w.temperature('celsius')['temp']) + "\n"
-    weather_info += "🔼 Максимальная температура: " +str(w.temperature('celsius')['temp_max']) + "\n"
-    weather_info += "🔽 Минимальная температура: " +str(w.temperature('celsius')['temp_min']) + "\n"
-    weather_info += "💨 Скорость ветра: " + str(w.wind()['speed']) + " м/с" + "\n"
-     
-    bot.reply_to(message, weather_info)
+    try :
+         mgr = owm.weather_manager()
+         observation = mgr.weather_at_place(message.text)
+         w = observation.weather
+         #print(w.wind()['speed'], w.temperature('celsius')['temp'])
+         weather_info = "🏫 В городе "+message.text+" сейчас "+w.detailed_status+"\n"
+         weather_info += "☀️ Температура: " + str(w.temperature('celsius')['temp']) + "\n"
+         weather_info += "🔼 Максимальная температура: " +str(w.temperature('celsius')['temp_max']) + "\n"
+         weather_info += "🔽 Минимальная температура: " +str(w.temperature('celsius')['temp_min']) + "\n"
+         weather_info += "💨 Скорость ветра: " + str(w.wind()['speed']) + " м/с" + "\n"
+
+         bot.reply_to(message, weather_info)
+    except:
+         error = f"<b> Данный город не найден. </b>"
+         bot.send_message(message.chat.id, error, parse_mode='html')     
 
 
 bot.polling(none_stop=True)

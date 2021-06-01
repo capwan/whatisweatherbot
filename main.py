@@ -22,8 +22,8 @@ def echo_all(message):
          #print(w.wind()['speed'], w.temperature('celsius')['temp'])
          weather_info = "🏫 В городе "+message.text+" сейчас "+w.detailed_status+"\n"
          weather_info += "☀️ Температура: " + str(w.temperature('celsius')['temp']) + "\n"
-         weather_info += "🔼 Максимальная температура: " +str(w.temperature('celsius')['max_temp']) + "\n"
-         weather_info += "🔽 Минимальная температура: " +str(w.temperature('celsius')['min_temp']) + "\n"
+         weather_info += "🔼 Максимальная температура: " +str(w.temperature('celsius')['temp_max']) + "\n"
+         weather_info += "🔽 Минимальная температура: " +str(w.temperature('celsius')['temp_min']) + "\n"
          weather_info += "💨 Скорость ветра: " + str(w.wind()['speed']) + " м/с" + "\n"
 
          bot.reply_to(message, weather_info)

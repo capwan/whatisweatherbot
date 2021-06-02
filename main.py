@@ -25,6 +25,7 @@ def echo_all(message):
          weather_info += "🔼 Максимальная температура: " +str(w.temperature('celsius')['temp_max']) + "\n"
          weather_info += "🔽 Минимальная температура: " +str(w.temperature('celsius')['temp_min']) + "\n"
          weather_info += "💨 Скорость ветра: " + str(w.wind()['speed']) + " м/с" + "\n"
+         weather_info += "Влажность: " + str(w.humidity()['celsius']) + "\n"
 
          bot.reply_to(message, weather_info)
     except:

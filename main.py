@@ -2,6 +2,7 @@ import pyowm
 import telebot
 from pyowm.utils.config import get_default_config
 
+
 config_dict = get_default_config()
 config_dict['language'] = 'ru'
 owm = pyowm.OWM('c19ac12a384b37dd79f6408bf1560726', config_dict)
@@ -30,6 +31,7 @@ def echo_all(message):
     except:
          error = f"<b> Данный город не найден. </b>"
          bot.send_message(message.chat.id, error, parse_mode='html')     
+
 
 
 bot.polling(none_stop=True)

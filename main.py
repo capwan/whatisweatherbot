@@ -8,7 +8,7 @@ config_dict = get_default_config()
 config_dict['language'] = 'ru'
 owm = pyowm.OWM('c19ac12a384b37dd79f6408bf1560726', config_dict)
 bot = telebot.TeleBot("1763102450:AAG8R7etHjR14_7Gb_BfHIrs1l3ek2gnSbM")
-
+tomorrow = timestamps.tomorrow()
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -29,7 +29,7 @@ def echo_all(message):
          weather_info += "💨 Скорость ветра: " + str(w.wind()['speed']) + " м/с" + "\n"
          weather_info += "Восход солнца: " + str(w.sunrise_time(timeformat='iso')) + "\n"
          weather_info += "Заход солнца: " + str(w.sunset_time(timeformat='iso')) + "\n"
-         weather_info += "Прогноз погоды на завтра: " + str(w.tomorrow = timestamps.tomorrow()) + "\n"
+         weather_info += "Прогноз погоды на завтра: " + str(w.get_weather_at(tomorrow)) + "\n"
 
          bot.reply_to(message, weather_info)
     except:

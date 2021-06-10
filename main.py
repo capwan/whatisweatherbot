@@ -1,6 +1,7 @@
 import pyowm
 import telebot
 from pyowm.utils.config import get_default_config
+from pyowm.utils import timestamps
 
 
 config_dict = get_default_config()
@@ -28,7 +29,7 @@ def echo_all(message):
          weather_info += "💨 Скорость ветра: " + str(w.wind()['speed']) + " м/с" + "\n"
          weather_info += "Восход солнца: " + str(w.sunrise_time(timeformat='iso')) + "\n"
          weather_info += "Заход солнца: " + str(w.sunset_time(timeformat='iso')) + "\n"
-        
+         weather_info += "Прогноз погоды на завтра: " + str(w.tomorrow = timestamps.tomorrow()) + "\n"
 
          bot.reply_to(message, weather_info)
     except:

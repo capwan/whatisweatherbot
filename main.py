@@ -28,7 +28,7 @@ def echo_all(message):
          weather_info += "💨 Скорость ветра: " + str(w.wind()['speed']) + " м/с" + "\n"
          weather_info += "Восход солнца: " + str(w.sunrise_time(timeformat='iso')) + "\n"
          weather_info += "Заход солнца: " + str(w.sunset_time(timeformat='iso')) + "\n"
-         weather_info += "Прогноз на завтра" + str(tomorrow = timestamps.tomorrow()) + "\n"
+        
 
          bot.reply_to(message, weather_info)
     except:

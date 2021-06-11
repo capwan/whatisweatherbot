@@ -26,6 +26,8 @@ def echo_all(message):
          weather_info += "💨 Скорость ветра: " + str(w.wind()['speed']) + " м/с" + "\n"
          weather_info += "🌕 Восход солнца: " + str(w.sunrise_time(timeformat='iso')) + "\n"
          weather_info += "🌑 Заход солнца: " + str(w.sunset_time(timeformat='iso')) + "\n"
+         weather_info += "Max pressure: " += str(w.max_pressure()) + "\n"
+         weather_info += "Min pressure: " += str(w.min_pressure()) + "\n"
          
 
 

@@ -19,7 +19,6 @@ def echo_all(message):
          observation = mgr.weather_at_place(message.text)
          w = observation.weather
          #print(w.wind()['speed'], w.temperature('celsius')['temp'])
-         weather_info += "Test: " + str(w.average_humidity()) + "\n"
          weather_info = "🏫 В городе "+message.text+" сейчас "+w.detailed_status+"\n"
          weather_info += "☀️ Температура: " + str(w.temperature('celsius')['temp']) + "\n"
          weather_info += "🔼 Максимальная температура: " +str(w.temperature('celsius')['temp_max']) + "\n"

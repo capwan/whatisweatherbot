@@ -9,4 +9,4 @@ Bot which show you weather in this moment in the city what interesting for you.
 ## Instruction
 
 1. Write `/start` for startup bot.
-2. Write city which insteresting for you.
+2. Write city name which interesting for you.

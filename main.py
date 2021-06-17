@@ -19,7 +19,6 @@ def echo_all(message):
          observation = mgr.weather_at_place(message.text)
          w = observation.weather
          #print(w.wind()['speed'], w.temperature('celsius')['temp'])
-         weather_info = " В городе "+message.text+" сейчас "+w.status+"\n"
          weather_info = "🏫 В городе "+message.text+" сейчас "+w.detailed_status+"\n"
          weather_info += "☀️ Температура: " + str(w.temperature('celsius')['temp']) + "\n"
          weather_info += "🔼 Максимальная температура: " +str(w.temperature('celsius')['temp_max']) + "\n"
@@ -27,7 +26,7 @@ def echo_all(message):
          weather_info += "💨 Скорость ветра: " + str(w.wind()['speed']) + " м/с" + "\n"
          weather_info += "🌕 Восход солнца: " + str(w.sunrise_time(timeformat='iso')) + "\n"
          weather_info += "🌑 Заход солнца: " + str(w.sunset_time(timeformat='iso')) + "\n"
-         weather_info += "Влажность: " + str(w.humidity()) + "\n"
+         weather_info += "Влажность: " + str(w.current.humidity) + "\n"
 
 
          bot.reply_to(message, weather_info)

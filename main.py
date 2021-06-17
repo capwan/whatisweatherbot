@@ -24,9 +24,9 @@ def echo_all(message):
          weather_info += "🔼 Максимальная температура: " +str(w.temperature('celsius')['temp_max']) + "\n"
          weather_info += "🔽 Минимальная температура: " +str(w.temperature('celsius')['temp_min']) + "\n"
          weather_info += "💨 Скорость ветра: " + str(w.wind()['speed']) + " м/с" + "\n"
+         weather_info += "💧 Влажность: " + str(w.humidity) + "%" + "\n"
          weather_info += "🌕 Восход солнца: " + str(w.sunrise_time(timeformat='iso')) + "\n"
          weather_info += "🌑 Заход солнца: " + str(w.sunset_time(timeformat='iso')) + "\n"
-         weather_info += "Влажность: " + str(w.humidity) + "%" + "\n"
        
 
 

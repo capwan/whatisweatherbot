@@ -1,5 +1,6 @@
 import pyowm
 import telebot
+import time
 from pyowm.utils.config import get_default_config
 
 config_dict = get_default_config()
@@ -26,7 +27,10 @@ def echo_all(message):
          weather_info += "💨 Скорость ветра: " + str(w.wind()['speed']) + " м/с" + "\n"
          weather_info += "💧 Влажность: " + str(w.humidity) + "%" + "\n"
          weather_info += "🌕 Восход солнца: " + str(w.sunrise_time()) + "\n"
+         time.ctime(int(sunrise_time))
          weather_info += "🌑 Заход солнца: " + str(w.sunset_time()) + "\n"
+         time.ctime(int(sunset_time))
+        
        
 
 

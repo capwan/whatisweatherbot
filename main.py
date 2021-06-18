@@ -1,6 +1,5 @@
 import pyowm
 import telebot
-import datetime as d
 from pyowm.utils.config import get_default_config
 
 config_dict = get_default_config()

@@ -12,6 +12,10 @@ def start(message):
     send_mess = f"<b>Привет 🤚🏻 {message.from_user.first_name}! </b>\nКакой город тебя интересует?🌍"
     bot.send_message(message.chat.id, send_mess, parse_mode='html')
 
+@bot.message_handler(commands=['clear'])
+def clear(message):
+    bot.delete_message(message.chat.id, message.message_id)        
+    
 @bot.message_handler(func=lambda m: True)
 def echo_all(message):
     try :

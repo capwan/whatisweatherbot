@@ -1,20 +1,11 @@
 import pyowm
 import telebot
-import datetime
-import astral
-import astral.sun import sun
 from pyowm.utils.config import get_default_config
 
 config_dict = get_default_config()
 config_dict['language'] = 'ru'
 owm = pyowm.OWM('c19ac12a384b37dd79f6408bf1560726', config_dict)
 bot = telebot.TeleBot("1763102450:AAG8R7etHjR14_7Gb_BfHIrs1l3ek2gnSbM")
-
-
-today = date.today()
-currentdate = date.today().strftime('%d.%m.%Y')
-
-s = sun(city.observer,date=currentdate)
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -34,10 +25,8 @@ def echo_all(message):
          weather_info += "🔽 Минимальная температура: " +str(w.temperature('celsius')['temp_min']) + "\n"
          weather_info += "💨 Скорость ветра: " + str(w.wind()['speed']) + " м/с" + "\n"
          weather_info += "💧 Влажность: " + str(w.humidity) + "%" + "\n"
-         weather_info += "Восход солнца: " + str(w.s(printf(f'Sunrise: {s["sunrise"]})
-         weather_info += "Заход солнца: " + str(w.s(printf(f'Sunset:  {s["sunset"]})
-#          weather_info += "🌕 Восход солнца: " + str(w.sunrise_time(timeformat='iso')) + "\n"
-#          weather_info += "🌑 Заход солнца: " + str(w.sunset_time(timeformat='iso')) + "\n"       
+         weather_info += "🌕 Восход солнца: " + str(w.sunrise_time(timeformat='iso')) + "\n"
+         weather_info += "🌑 Заход солнца: " + str(w.sunset_time(timeformat='iso')) + "\n"       
        
 
 

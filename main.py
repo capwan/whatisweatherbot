@@ -1,5 +1,6 @@
 import pyowm
 import telebot
+import astral
 import astral.sun import sun
 from pyowm.utils.config import get_default_config
 

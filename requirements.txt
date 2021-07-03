@@ -1,5 +1,3 @@
 pyowm
 pyTelegramBotAPI
-astral
-suntime
-datetime
+

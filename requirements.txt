@@ -1,3 +1,3 @@
 pyowm
 pyTelegramBotAPI
-astral
+astral.sun

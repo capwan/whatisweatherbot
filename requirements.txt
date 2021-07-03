@@ -1,5 +1,4 @@
 pyowm
 pyTelegramBotAPI
 astral
-astral.sun
 suntime

@@ -4,8 +4,8 @@ from pyowm.utils.config import get_default_config
 
 config_dict = get_default_config()
 config_dict['language'] = 'ru'
-owm = pyowm.OWM('c19ac12a384b37dd79f6408bf1560726', config_dict) # Input here your OpenWeatherMap API (it's free API)
-bot = telebot.TeleBot("1763102450:AAG8R7etHjR14_7Gb_BfHIrs1l3ek2gnSbM") # Input your Telegram bot's API
+owm = pyowm.OWM('c19ac12a384b37dd79f6408bf1560726', config_dict) 
+bot = telebot.TeleBot("1763102450:AAG8R7etHjR14_7Gb_BfHIrs1l3ek2gnSbM") 
 
 @bot.message_handler(commands=['start'])
 def start(message):
